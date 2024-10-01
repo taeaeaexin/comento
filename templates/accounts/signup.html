@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block content %}
 {% load static %}
-<html lang="ko">
 <head>
     <meta charset="utf-8"/>
-    <title>메인 페이지</title>
+    <title>회원가입</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
@@ -14,12 +12,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 </head>
-<body>
-<!--<nav>-->
-<!--    <a href="/company/">company info</a>-->
-<!--    <a href="/product/">product</a>-->
-<!--</nav>-->
-<h1>메인 페이지입니다.</h1>
-</body>
-</html>
+
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+  </form>
 {% endblock %}
